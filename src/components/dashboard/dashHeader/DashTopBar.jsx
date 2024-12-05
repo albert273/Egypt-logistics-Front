@@ -15,7 +15,7 @@ import Link from "next/link";
 import LogoutIcon from "@mui/icons-material/Logout";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import Image from "next/image";
-import logo from "../../../../public/images/logo.png"
+import logo from "../../../../public/images/log0_page-0001.jpg"
 import cookie from 'cookie-universal'
 
 

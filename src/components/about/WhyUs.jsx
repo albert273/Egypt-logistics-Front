@@ -15,6 +15,8 @@ function WhyUs() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
+    const currentSection = sectionRef.current; // Capture the current value of the ref
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -42,13 +44,13 @@ function WhyUs() {
       { threshold: 0.1 } // Adjust threshold as needed
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current); // Observe the section
+    if (currentSection) {
+      observer.observe(currentSection); // Observe the section
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current); // Clean up the observer on component unmount
+      if (currentSection) {
+        observer.unobserve(currentSection); // Clean up the observer on component unmount
       }
     };
   }, []);

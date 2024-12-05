@@ -134,7 +134,7 @@ const Array3 = [
   },
 ];
 
-const SideBar = ({ open, handleDrawerClose }) => {
+export default function SideBar({ open, handleDrawerClose }) {
   const { navigate } = useNavigation();
   const path = usePathname();
   const theme = useTheme();
@@ -148,7 +148,7 @@ const SideBar = ({ open, handleDrawerClose }) => {
   useEffect(() => {
     setUserName(cookies.get("name") || "");
     setUserRole(cookies.get("role") || "");
-  }, []);
+  }, [cookies]);
 
   return (
     <Drawer
@@ -380,4 +380,3 @@ const SideBar = ({ open, handleDrawerClose }) => {
   );
 };
 
-export default SideBar;

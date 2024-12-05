@@ -11,12 +11,14 @@ const boxes = [
   { id: "3", title: "5 Star Reviews", value: "199" },
   { id: "4", title: "Countries Covered", value: "125" },
 ];
-function OurValues() {
+export default function Page() {
   const rightRef = useRef(null);
   const leftRef = useRef(null);
   const sectionRef = useRef(null);
 
   useEffect(() => {
+    const currentSection = sectionRef.current; // Capture the current value of the ref
+  
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -24,7 +26,7 @@ function OurValues() {
             // Reset the elements before playing the animation again
             gsap.set(rightRef.current, { x: "100%", opacity: 0 });
             gsap.set(leftRef.current, { x: "-100%", opacity: 0 });
-
+  
             // Play the animation when the section comes into view
             gsap.to(rightRef.current, {
               x: 0,
@@ -43,17 +45,18 @@ function OurValues() {
       },
       { threshold: 0.1 } // Adjust threshold as needed
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+  
+    if (currentSection) {
+      observer.observe(currentSection);
     }
-
+  
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentSection) {
+        observer.unobserve(currentSection);
       }
     };
   }, []);
+  
 
   return (
     <Box sx={{ paddingBottom: "30px" }}>
@@ -181,4 +184,3 @@ function OurValues() {
   );
 }
 
-export default OurValues;

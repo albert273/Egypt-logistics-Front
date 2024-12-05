@@ -26,7 +26,7 @@ import { Country, travelType, typeSeaContainer, GoodsType } from "@/utils/data";
 const phoneRegExp =
   /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/;
 
-const page = () => {
+  export default function Page() {
   const {
     register,
     handleSubmit,
@@ -93,7 +93,6 @@ const page = () => {
         setErrorMsg(err.response.data.errors[0].msg);
       } else {
         setErrorMsg("An error occurred. Please try again.");
-        console.log(err);
       }
     }
   };
@@ -460,4 +459,3 @@ const page = () => {
   );
 };
 
-export default page;

@@ -21,7 +21,7 @@ import cookie from "cookie-universal";
 import ReportGmailerrorredIcon from "@mui/icons-material/ReportGmailerrorred";
 import Link from "next/link";
 
-const ManageClient = () => {
+export default function ManageClient(){
   const [inputValue, setInputValue] = useState("");
   const [filterHeadOfficer, setFilterHeadOfficer] = useState([]);
   const [loaded, setLoaded] = useState(false);
@@ -31,7 +31,7 @@ const ManageClient = () => {
 
   useEffect(() => {
     dispatch(fetchHeadOffice());
-  }, []);
+  }, [dispatch]);
   
   const cookies = cookie();
   const role = cookies.get("role");
@@ -106,7 +106,7 @@ const ManageClient = () => {
           <Typography
             sx={{ color: "#dd3333", fontWeight: "bold", fontSize: "1.6rem" }}
           >
-            Sorry you can't access on this page
+            Sorry you can`&apos;`t access on this page
           </Typography>
         </Box>
       </Box>
@@ -222,4 +222,3 @@ const ManageClient = () => {
   );
 };
 
-export default ManageClient;

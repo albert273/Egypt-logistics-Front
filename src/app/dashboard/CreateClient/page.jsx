@@ -154,7 +154,7 @@ export default function CreateClient() {
           <Typography
             sx={{ color: "#dd3333", fontWeight: "bold", fontSize: "1.6rem" }}
           >
-            Sorry you can't access on this page
+            Sorry you can`&apos;`t access on this page
           </Typography>
         </Box>
       </Box>

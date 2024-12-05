@@ -7,7 +7,7 @@ import { useRef, useState, useEffect } from "react";
 import { Provider } from "react-redux";
 import { makeStore } from "@/redux/Store";
 
-const dashLayout = ({ children }) => {
+export default function DashLayout({ children }) {
   const [role, setRole] = useState();
 
   const storeRef = useRef();
@@ -45,4 +45,3 @@ const dashLayout = ({ children }) => {
   );
 };
 
-export default dashLayout;

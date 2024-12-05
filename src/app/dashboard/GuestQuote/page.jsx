@@ -7,14 +7,14 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CircularProgress } from "@mui/material";
 
-const page = () => {
+export default function Page() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
   const guestQuotes = useSelector((state) => state.Quotes.Quote);
 
   useEffect(() => {
     dispatch(fetchGuestQuoteData());
-  }, []);
+  }, [dispatch]);
 
 
   useEffect(() => {
@@ -123,4 +123,3 @@ const page = () => {
   );
 };
 
-export default page;

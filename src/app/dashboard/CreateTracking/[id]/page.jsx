@@ -3,9 +3,7 @@ import {
   Alert,
   Box,
   Card,
-  InputAdornment,
-  Snackbar,
-  TextField,
+  Snackbar
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -30,9 +28,7 @@ const validSteps = [
   { id: "7", name: "shipping" },
 ];
 
-const page = ({ params }) => {
-
-
+export default function Page({ params }) {
   const { id } = params;
   const [errorMsg, setErrorMsg] = useState("");
   const [open, setOpen] = useState(false);
@@ -265,4 +261,3 @@ const page = ({ params }) => {
   );
 };
 
-export default page;

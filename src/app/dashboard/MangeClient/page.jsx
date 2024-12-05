@@ -11,7 +11,6 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import SearchIcon from "@mui/icons-material/Search";
@@ -22,7 +21,7 @@ import cookie from "cookie-universal";
 import ReportGmailerrorredIcon from "@mui/icons-material/ReportGmailerrorred";
 import Link from "next/link";
 
-const ManageClient = () => {
+export default function ManageClient() {
   const [inputValue, setInputValue] = useState("");
   const [filterdCustomer, setFilterdCustomer] = useState([]);
   const [loaded, setLoaded] = useState(false);
@@ -36,7 +35,7 @@ const ManageClient = () => {
 
   useEffect(() => {
     dispatch(fetchClient());
-  }, []);
+  }, [dispatch]);
 
   const styles = {
     width: "100%",
@@ -105,7 +104,7 @@ const ManageClient = () => {
           <Typography
             sx={{ color: "#dd3333", fontWeight: "bold", fontSize: "1.6rem" }}
           >
-            Sorry you can't access on this page
+            Sorry you can`&apos;`t access on this page
           </Typography>
         </Box>
       </Box>
@@ -236,4 +235,3 @@ const ManageClient = () => {
   );
 };
 
-export default ManageClient;

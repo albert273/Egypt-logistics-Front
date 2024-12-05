@@ -39,10 +39,11 @@ function AppBar({ setAppBar, isOpen, buttons, appBarRef }) {
         x: "100%",
         duration: 0.6,
         ease: "power1.inOut",
-        onComplete: () => setAppBar(false), // Delay closing until animation completes
+        onComplete: () => setAppBar(false),
       });
     }
-  }, [isOpen, setAppBar]);
+  }, [isOpen, setAppBar, appBarRef]);
+  
 
   const handleCloseWithAnimation = () => {
     gsap.to(appBarRef.current, {

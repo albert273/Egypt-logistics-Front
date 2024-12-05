@@ -6,7 +6,7 @@ import delivery from "../../../../public/images/about/ss.png";
 import HeroPages from '@/components/heroPage/Hero'
 import { useState } from 'react';
 
-const page = () => {
+export default function Page() {
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [snackbarSeverity, setSnackbarSeverity] = useState('success');
@@ -38,4 +38,3 @@ const page = () => {
   )
 }
 
-export default page

@@ -22,7 +22,7 @@ export default function Message() {
 
   useEffect(() => {
     dispatch(fetchMessageData());
-  }, []);
+  }, [dispatch]);
 
   const acceptedMessage = async (id) => {
     const cookies = cookie();

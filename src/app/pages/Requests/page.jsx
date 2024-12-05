@@ -12,7 +12,7 @@ import cookie from "cookie-universal";
 import Image from "next/image";
 import img from "../../../../public/images/requests/shoe-box-clipart-2.jpg";
 
-const page = () => {
+export default function Page() {
   const [userRequest, setUserRequest] = useState(); // Default to empty array
   const [loaded, setLoaded] = useState(false);
 
@@ -46,7 +46,6 @@ const page = () => {
   useEffect(() => {
     setLoaded(true);
   }, []);
-  console.log(userRequest);
 
   if (!loaded)
     return (
@@ -90,7 +89,7 @@ const page = () => {
                 }}
               >
                 {" "}
-                Sorry but you don't have any requests.
+                Sorry but you don`&apos;`t have any requests.
               </Typography>
             </Stack>
           ) : (
@@ -137,4 +136,3 @@ const page = () => {
   );
 };
 
-export default page;
