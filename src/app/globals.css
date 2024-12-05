@@ -5,8 +5,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #000000;
   }
 }
 
@@ -14,6 +14,9 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  padding-right: 0;
+  scroll-behavior: smooth;
+
 }
 
 body {
@@ -22,12 +25,15 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-right: 0;
+
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
+  padding-right: 0;
   margin: 0;
+  
 }
 
 a {
@@ -40,3 +46,27 @@ a {
     color-scheme: dark;
   }
 }
+
+::-webkit-scrollbar {
+  width: 13px;
+ }
+ 
+::-webkit-scrollbar-track {
+  border: 7px solid #232943;
+  box-shadow: inset 0 0 2.5px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  }
+ 
+::-webkit-scrollbar-thumb {
+  /*background: linear-gradient(90deg, #9e4673, #3d4a59);*/
+  border-radius: 1rem;
+  background-color: #cbcbcb;
+}
+ 
+::-webkit-scrollbar-thumb:hover {
+  /*background: linear-gradient(270deg, #9e4673, #3d4a59, #9e4673);*/
+  background-color: #c2c2c2;
+}
+ 
+/* for Firefox */
+ html {scrollbar-color: #dd3333 #ffffff34;}
